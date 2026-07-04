@@ -7,4 +7,5 @@ class AppColors {
   static const cQuaternary = Color(0xFF4EA597);
   static const cWhite = Color(0xFFFFFFFF);
   static const cBlack = Color(0xFF000000);
+  static const cGrey = Color(0xFF828282);
 }
