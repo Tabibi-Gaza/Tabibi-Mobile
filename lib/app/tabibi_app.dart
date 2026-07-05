@@ -8,6 +8,7 @@ class TabibiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      locale: Locale('ar'),
       debugShowCheckedModeBanner: false,
       title: 'Tabibi',
       theme: ThemeData(fontFamily: 'Cairo', primarySwatch: Colors.blue),

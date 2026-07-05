@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:tabibi_app/core/constants/app_assets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';

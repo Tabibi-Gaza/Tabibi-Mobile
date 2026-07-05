@@ -8,41 +8,35 @@ import 'package:tabibi_app/features/onBording/data/onboarding_data.dart';
 import 'package:tabibi_app/features/onBording/widget/custome_app_bar.dart';
 import 'package:tabibi_app/features/onBording/widget/custome_page_view.dart';
 
-class OnBordingScreen extends StatefulWidget {
+class OnBordingScreen extends StatelessWidget {
   const OnBordingScreen({super.key});
 
   @override
-  State<OnBordingScreen> createState() => _OnBordingScreenState();
-}
-
-class _OnBordingScreenState extends State<OnBordingScreen> {
-  final OnBordingController _onBordingController = Get.put(
-    OnBordingController(),
-  );
-
-  @override
   Widget build(BuildContext context) {
+    final OnBordingController onBordingController = Get.put(
+      OnBordingController(),
+    );
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Obx(() {
-          return CustomeAppBar(
-            position: _onBordingController.index.value,
+        title: Obx(
+          () => CustomeAppBar(
+            position: onBordingController.index.value,
             dotsCount: onboardingData.length,
             onTap: (index) {
-              _onBordingController.onTap(index);
+              onBordingController.onTap(index);
             },
-          );
-        }),
+          ),
+        ),
         leading: Obx(
-          () => _onBordingController.index.value <= 0
+          () => onBordingController.index.value <= 0
               ? Text("")
               : IconButton(
                   onPressed: () {
-                    _onBordingController.onPrevious();
+                    onBordingController.onPrevious();
                   },
                   icon: Icon(Icons.arrow_back_sharp, color: AppColors.cPrimary),
                 ),
@@ -50,7 +44,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              _onBordingController.onSkip();
+              onBordingController.onSkip();
             },
             child: Text(
               AppString.skipText,
@@ -75,9 +69,9 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
 
-            controller: _onBordingController.pageController,
+            controller: onBordingController.pageController,
             onPageChanged: (index) {
-              _onBordingController.index.value = index;
+              onBordingController.index.value = index;
             },
             itemBuilder: (context, index) {
               return CustomePageView(
@@ -85,7 +79,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                 title: onboardingData[index].title!,
                 subTitle: onboardingData[index].subTitle!,
                 onTap: () {
-                  _onBordingController.onNext();
+                  onBordingController.onNext();
                 },
               );
             },

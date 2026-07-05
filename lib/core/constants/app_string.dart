@@ -14,4 +14,29 @@ class AppString {
       "احصل على تذكيرات بالمواعيد، وتابع سجلاتك الصحية بسهولة.";
 
   static const String skipText = "تخطي";
+
+  //? App Auth
+  static const String loginTitle = "أهـــلاً بــك مـــجدداً";
+  static const String loginSubTitle =
+      "قم بتسجيل الدخول للوصول إلى سجلاتك الطبية ومواعيدك.";
+  static const String loginButton = "تسجيل الدخول";
+  static const String loginHaveNoAccount = "ليس لديك حساب ؟ ";
+  static const String loginRegisterNow = "سجل الان";
+  static const String loginForgetPassword = "نسيت كلمة المرور؟";
+  static const String authEmail = "البريد الألكتروني";
+  static const String authPassword = "كلمة المرور";
+  static const String authFullName = "الأسم كاملا";
+  static const String authPhoneNumber = "رقم الهاتف";
+  static const String authGender = "الجنس";
+  static const String authAddress = "العنوان";
+
+  static const String registerTitle = "أهـــلا بـــك معنــا";
+  static const String registerSubTitle =
+      "املأ بياناتك لفتح ملفك الطبي الرقمي الفوري";
+  static const String registerButton = "إنشاء حساب";
+  static const String registerHaveAccount = 'لديك حساب بالفعل؟';
+  static const String registerTermsAndConditions =
+      "أوافق على شروط الأستخدام و الخصوصية";
+  static const String registerMale = "ذكر";
+  static const String registerFemale = "أنثى";
 }
