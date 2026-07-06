@@ -6,4 +6,7 @@ class AppAssets {
   static const String aOnBording1 = 'assets/svg/onbording/on_bording01.svg';
   static const String aOnBording2 = 'assets/svg/onbording/on_bording02.svg';
   static const String aOnBording3 = 'assets/svg/onbording/on_bording03.svg';
+  //? App Image
+  static const String aPerson = 'assets/images/person.jpg';
+  static const String aDoctor = 'assets/images/doctor.jpg';
 }

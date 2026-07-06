@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';
 import 'package:tabibi_app/core/constants/app_radius.dart';
-import 'package:tabibi_app/core/constants/app_size.dart';
 import 'package:tabibi_app/features/auth/register/controller/register_controller.dart';
 import 'package:tabibi_app/features/auth/register/widget/custom_body_register.dart';
 import 'package:tabibi_app/features/auth/register/widget/custom_heder_register.dart';

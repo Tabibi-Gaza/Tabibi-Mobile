@@ -4,11 +4,13 @@ import 'package:tabibi_app/core/constants/app_font_size.dart';
 
 class CustomeButtonAuth extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
+  final Color? color;
   const CustomeButtonAuth({
     super.key,
     required this.text,
     required this.onPressed,
+    this.color,
   });
 
   @override
@@ -17,7 +19,7 @@ class CustomeButtonAuth extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: Size(double.infinity, 50),
-        backgroundColor: AppColors.cPrimary,
+        backgroundColor: color ?? AppColors.cPrimary,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
       child: Text(

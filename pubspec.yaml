@@ -37,6 +37,7 @@ dependencies:
   get: ^4.7.3
   flutter_svg: ^2.3.0
   dots_indicator: ^4.0.1
+  persistent_bottom_nav_bar: ^6.2.1
 
 dev_dependencies:
   flutter_test:

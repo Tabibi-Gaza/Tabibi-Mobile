@@ -46,4 +46,9 @@ class AppString {
       "يرجى إدخال بريدك الإلكتروني المسجل، وسنرسل لك رابطاً لإعادة تعيين كلمة المرور";
   static const String forgotPasswordButton = "إرسال";
   static const String forgotPasswordBackToLogin = "العودة لتسجيل الدخول";
+
+  //? App Home
+  static const String homeAppointment = "الموعد القادم";
+  static const String homeQuickActions = "إجراءات سريعة";
+  static const String homeDepartments = "الأقسام الطبية";
 }

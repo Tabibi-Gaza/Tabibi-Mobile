@@ -9,7 +9,7 @@ import 'package:tabibi_app/features/auth/login/widget/custom_body_login.dart';
 import 'package:tabibi_app/features/auth/login/widget/custome_heder_login.dart';
 
 class LoginScreen extends GetView<LoginController> {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
