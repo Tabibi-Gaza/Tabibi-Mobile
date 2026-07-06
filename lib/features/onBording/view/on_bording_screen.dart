@@ -8,14 +8,11 @@ import 'package:tabibi_app/features/onBording/data/onboarding_data.dart';
 import 'package:tabibi_app/features/onBording/widget/custome_app_bar.dart';
 import 'package:tabibi_app/features/onBording/widget/custome_page_view.dart';
 
-class OnBordingScreen extends StatelessWidget {
+class OnBordingScreen extends GetView<OnBordingController> {
   const OnBordingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final OnBordingController onBordingController = Get.put(
-      OnBordingController(),
-    );
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -24,19 +21,19 @@ class OnBordingScreen extends StatelessWidget {
         centerTitle: true,
         title: Obx(
           () => CustomeAppBar(
-            position: onBordingController.index.value,
+            position: controller.index.value,
             dotsCount: onboardingData.length,
             onTap: (index) {
-              onBordingController.onTap(index);
+              controller.onTap(index);
             },
           ),
         ),
         leading: Obx(
-          () => onBordingController.index.value <= 0
+          () => controller.index.value <= 0
               ? Text("")
               : IconButton(
                   onPressed: () {
-                    onBordingController.onPrevious();
+                    controller.onPrevious();
                   },
                   icon: Icon(Icons.arrow_back_sharp, color: AppColors.cPrimary),
                 ),
@@ -44,7 +41,7 @@ class OnBordingScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              onBordingController.onSkip();
+              controller.onSkip();
             },
             child: Text(
               AppString.skipText,
@@ -60,18 +57,16 @@ class OnBordingScreen extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          color: AppColors.cPrimary.withValues(alpha: 0.1),
-        ),
+        decoration: BoxDecoration(color: AppColors.cWhite),
         child: SafeArea(
           child: PageView.builder(
             itemCount: onboardingData.length,
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
 
-            controller: onBordingController.pageController,
+            controller: controller.pageController,
             onPageChanged: (index) {
-              onBordingController.index.value = index;
+              controller.index.value = index;
             },
             itemBuilder: (context, index) {
               return CustomePageView(
@@ -79,7 +74,7 @@ class OnBordingScreen extends StatelessWidget {
                 title: onboardingData[index].title!,
                 subTitle: onboardingData[index].subTitle!,
                 onTap: () {
-                  onBordingController.onNext();
+                  controller.onNext();
                 },
               );
             },

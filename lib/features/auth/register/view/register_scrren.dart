@@ -8,23 +8,20 @@ import 'package:tabibi_app/features/auth/register/controller/register_controller
 import 'package:tabibi_app/features/auth/register/widget/custom_body_register.dart';
 import 'package:tabibi_app/features/auth/register/widget/custom_heder_register.dart';
 
-class RegisterScrren extends StatelessWidget {
-  RegisterScrren({super.key});
-
-  final RegisterController _registerController = Get.put(RegisterController());
+class RegisterScrren extends GetView<RegisterController> {
+  const RegisterScrren({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.cSecondary,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            CustomHederRegister(),
-            const SizedBox(height: AppSizeHeight.h10),
-
-            Container(
+      body: Column(
+        children: [
+          Expanded(flex: 2, child: CustomHederRegister()),
+          Expanded(
+            flex: 5,
+            child: Container(
               width: double.infinity,
               padding: EdgeInsets.only(
                 top: AppPadding.p30,
@@ -48,56 +45,58 @@ class RegisterScrren extends StatelessWidget {
                 ],
               ),
 
-              child: Form(
-                key: _registerController.formKeyRegister,
-                child: GetBuilder<RegisterController>(
-                  builder: (registerController) {
-                    return CustomBodyRegister(
-                      fullNameController: registerController.fullNameController,
-                      emailController: registerController.emailController,
-                      phoneController: registerController.phoneController,
-                      addressController: registerController.addressController,
-                      passwordController: registerController.passwordController,
-                      confirmPasswordController:
-                          registerController.confirmPasswordController,
+              child: SingleChildScrollView(
+                child: Form(
+                  key: controller.formKeyRegister,
+                  child: GetBuilder<RegisterController>(
+                    builder: (registerController) {
+                      return CustomBodyRegister(
+                        fullNameController:
+                            registerController.fullNameController,
+                        emailController: registerController.emailController,
+                        phoneController: registerController.phoneController,
+                        addressController: registerController.addressController,
+                        passwordController:
+                            registerController.passwordController,
 
-                      validatorFullName: registerController.validatorFullName,
-                      validatorEmail: registerController.validatorEmail,
-                      validatorPhone: registerController.validatorPhone,
-                      validatorGender: registerController.validatorGender,
-                      validatorAddress: registerController.validatorAddress,
-                      validatorPassword: registerController.validatorPassword,
+                        validatorFullName: registerController.validatorFullName,
+                        validatorEmail: registerController.validatorEmail,
+                        validatorPhone: registerController.validatorPhone,
+                        validatorGender: registerController.validatorGender,
+                        validatorAddress: registerController.validatorAddress,
+                        validatorPassword: registerController.validatorPassword,
 
-                      onChangedGender: registerController.onChangedGender,
-                      onChangedCheckbox: registerController.onChangedCheckbox,
+                        onChangedGender: registerController.onChangedGender,
+                        onChangedCheckbox: registerController.onChangedCheckbox,
 
-                      isObscureTextPassword:
-                          registerController.isObscureTextPassword,
-                      isChecked: registerController.isChecked,
+                        isObscureTextPassword:
+                            registerController.isObscureTextPassword,
+                        isChecked: registerController.isChecked,
 
-                      sufficIcon: IconButton(
-                        onPressed:
-                            registerController.onChangedPasswordObscureText,
-                        icon: Icon(
-                          registerController.isObscureTextPassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
+                        sufficIcon: IconButton(
+                          onPressed:
+                              registerController.onChangedPasswordObscureText,
+                          icon: Icon(
+                            registerController.isObscureTextPassword
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                          ),
                         ),
-                      ),
 
-                      onPressedRegisterButton:
-                          registerController.onPressedRegisterButton,
-                      onPressedTextButton:
-                          registerController.onPressedTextButton,
-                      ischeckboxError: registerController.ischeckboxError,
-                      checkboxError: registerController.checkboxError,
-                    );
-                  },
+                        onPressedRegisterButton:
+                            registerController.onPressedRegisterButton,
+                        onPressedTextButton:
+                            registerController.onPressedTextButton,
+                        ischeckboxError: registerController.ischeckboxError,
+                        checkboxError: registerController.checkboxError,
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -3,4 +3,5 @@ class AppRoutes {
   static const onBording = '/onBording';
   static const login = '/login';
   static const register = '/register';
+  static const forgotPassword = '/forgotPassword';
 }

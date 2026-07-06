@@ -44,7 +44,7 @@ class CustomePageView extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       spreadRadius: 2,
-                      color: AppColors.cPrimary.withValues(alpha: 0.2),
+                      color: AppColors.cPrimary.withValues(alpha: 0.3),
                       offset: const Offset(0, 0),
                       blurRadius: AppRadius.r20,
                     ),

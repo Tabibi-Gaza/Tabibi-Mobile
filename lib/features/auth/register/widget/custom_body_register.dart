@@ -15,7 +15,6 @@ class CustomBodyRegister extends StatelessWidget {
     required this.phoneController,
     required this.addressController,
     required this.passwordController,
-    required this.confirmPasswordController,
     required this.validatorFullName,
     required this.validatorEmail,
     required this.validatorPhone,
@@ -38,7 +37,6 @@ class CustomBodyRegister extends StatelessWidget {
   final TextEditingController phoneController;
   final TextEditingController addressController;
   final TextEditingController passwordController;
-  final TextEditingController confirmPasswordController;
   final FormFieldValidator<String> validatorFullName;
   final FormFieldValidator<String> validatorEmail;
   final FormFieldValidator<String> validatorPhone;

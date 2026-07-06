@@ -39,4 +39,11 @@ class AppString {
       "أوافق على شروط الأستخدام و الخصوصية";
   static const String registerMale = "ذكر";
   static const String registerFemale = "أنثى";
+
+  //? App Forgot Password
+  static const String forgotPasswordTitle = "إعادة كلمة المرور";
+  static const String forgotPasswordSubTitle =
+      "يرجى إدخال بريدك الإلكتروني المسجل، وسنرسل لك رابطاً لإعادة تعيين كلمة المرور";
+  static const String forgotPasswordButton = "إرسال";
+  static const String forgotPasswordBackToLogin = "العودة لتسجيل الدخول";
 }

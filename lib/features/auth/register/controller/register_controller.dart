@@ -3,28 +3,16 @@ import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
   final GlobalKey<FormState> formKeyRegister = GlobalKey<FormState>();
-  late TextEditingController fullNameController;
-  late TextEditingController emailController;
-  late TextEditingController phoneController;
-  late TextEditingController addressController;
-  late TextEditingController passwordController;
-  late TextEditingController confirmPasswordController;
+  final TextEditingController fullNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   bool isChecked = false;
   bool isObscureTextPassword = true;
   String? gender;
   bool ischeckboxError = false;
   String? checkboxError;
-
-  @override
-  void onInit() {
-    fullNameController = TextEditingController();
-    emailController = TextEditingController();
-    phoneController = TextEditingController();
-    addressController = TextEditingController();
-    passwordController = TextEditingController();
-    confirmPasswordController = TextEditingController();
-    super.onInit();
-  }
 
   String? validatorFullName(String? value) {
     if (value == null || value.isEmpty) {
@@ -106,7 +94,7 @@ class RegisterController extends GetxController {
   }
 
   void onPressedTextButton() {
-    Get.offAllNamed("/login");
+    Get.back();
   }
 
   @override
@@ -116,7 +104,6 @@ class RegisterController extends GetxController {
     phoneController.dispose();
     addressController.dispose();
     passwordController.dispose();
-    confirmPasswordController.dispose();
     super.onClose();
   }
 }

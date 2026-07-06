@@ -4,18 +4,9 @@ import 'package:tabibi_app/core/routes/app_routes.dart';
 
 class LoginController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late TextEditingController emailController;
-  late TextEditingController passwordController;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   bool obscureText = true;
-  String errorEmail = "";
-  String errorPassword = "";
-
-  @override
-  void onInit() {
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
-    super.onInit();
-  }
 
   String? validatorEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -52,6 +43,10 @@ class LoginController extends GetxController {
     } else {
       Get.snackbar("خطأ", "يرجى تعبئة الحقول");
     }
+  }
+
+  void onPressedForgetPassword() {
+    Get.toNamed(AppRoutes.forgotPassword);
   }
 
   @override

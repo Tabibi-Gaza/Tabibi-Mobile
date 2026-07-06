@@ -8,9 +8,8 @@ import 'package:tabibi_app/features/auth/login/controller/login_controller.dart'
 import 'package:tabibi_app/features/auth/login/widget/custom_body_login.dart';
 import 'package:tabibi_app/features/auth/login/widget/custome_heder_login.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends GetView<LoginController> {
   LoginScreen({super.key});
-  final LoginController _loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +45,10 @@ class LoginScreen extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Form(
-                  key: _loginController.formKey,
+                  key: controller.formKey,
                   child: GetBuilder<LoginController>(
-                    init: _loginController,
-                    builder: (loginController) {
+                    init: controller,
+                    builder: (controller) {
                       return CustomBodyLogin(
                         loginTitleText: AppString.loginTitle,
                         loginSubTitleText: AppString.loginSubTitle,
@@ -59,28 +58,30 @@ class LoginScreen extends StatelessWidget {
                         loginRegisterNowText: AppString.loginRegisterNow,
                         loginEmailText: AppString.authEmail,
                         loginPasswordText: AppString.authPassword,
-                        emailController: loginController.emailController,
-                        passwordController: loginController.passwordController,
-                        onPressedForgetPassword: () {},
+                        emailController: controller.emailController,
+                        passwordController: controller.passwordController,
+                        onPressedForgetPassword: () {
+                          controller.onPressedForgetPassword();
+                        },
                         onPressedRegisterNow: () {
-                          _loginController.onPressedRegisterNow();
+                          controller.onPressedRegisterNow();
                         },
                         onPressedLogin: () {
-                          _loginController.onPressedLogin();
+                          controller.onPressedLogin();
                         },
                         validatorEmail: (value) {
-                          return _loginController.validatorEmail(value);
+                          return controller.validatorEmail(value);
                         },
                         validatorPassword: (value) {
-                          return _loginController.validatorPassword(value);
+                          return controller.validatorPassword(value);
                         },
-                        obscureText: _loginController.obscureText,
+                        obscureText: controller.obscureText,
                         sufficIcon: IconButton(
                           onPressed: () {
-                            loginController.togglePasswordVisibility();
+                            controller.togglePasswordVisibility();
                           },
                           icon: Icon(
-                            loginController.obscureText
+                            controller.obscureText
                                 ? Icons.visibility
                                 : Icons.visibility_off,
                           ),
