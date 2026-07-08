@@ -43,7 +43,7 @@ class AppPages {
     ),
     GetPage(name: AppRoutes.mainHomePage, page: () => MainHomePage()),
     GetPage(
-      name: AppRoutes.PersonalInformationScreen,
+      name: AppRoutes.personalInformationScreen,
       page: () => PersonalInformationScreen(),
     ),
   ];

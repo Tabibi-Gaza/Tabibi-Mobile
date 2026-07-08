@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   return CustomeHomeHeader(
                     personPathImage: AppAssets.aPerson,
                     personName: 'سارة',
-                    iconNotification: Icons.notifications_active_rounded,
+                    iconNotification: Icons.notifications,
                     onChanged: controller.onSearchTextFieldChange,
                     onTap: controller.onTapOnSearchTextField,
                     onPressed: controller.onTapOutsideSearchTextField,
@@ -43,11 +43,11 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding:  EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       right: AppPadding.p30,
                       left: AppPadding.p30,
                       bottom: AppPadding.p40,
-                      top: AppPadding.p10
+                      top: AppPadding.p10,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,8 +55,8 @@ class HomeScreen extends StatelessWidget {
                         CustomeHomeReminderBanner(
                           text: "تذكير: موعدك غداً الساعة 10:00 ص مع د. أحمد",
                         ),
-                         SizedBox(height: AppSizeHeight.h20),
-                         Text(
+                        SizedBox(height: AppSizeHeight.h20),
+                        Text(
                           AppString.homeAppointment,
                           style: TextStyle(
                             fontSize: AppFontSize.fontSize20,
@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                             color: AppColors.cBlack,
                           ),
                         ),
-                         SizedBox(height: AppSizeHeight.h10),
+                        SizedBox(height: AppSizeHeight.h10),
                         CustomeHomeNextAppointmentCard(
                           nameDoctor: "د. أحمد محمد",
                           imageDoctor: AppAssets.aDoctor,
@@ -74,8 +74,8 @@ class HomeScreen extends StatelessWidget {
                           state: "مؤكد",
                           onPressed: () {},
                         ),
-                         SizedBox(height: AppSizeHeight.h20),
-                         Text(
+                        SizedBox(height: AppSizeHeight.h20),
+                        Text(
                           AppString.homeQuickActions,
                           style: TextStyle(
                             fontSize: AppFontSize.fontSize20,
@@ -83,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                             color: AppColors.cBlack,
                           ),
                         ),
-                         SizedBox(height: AppSizeHeight.h10),
+                        SizedBox(height: AppSizeHeight.h10),
                         GridView.count(
                           shrinkWrap: true,
                           padding: EdgeInsets.zero,
@@ -124,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                         SizedBox(height: AppSizeHeight.h20),
+                        SizedBox(height: AppSizeHeight.h20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -140,7 +140,7 @@ class HomeScreen extends StatelessWidget {
                               onPressed: () {
                                 // TODO: Get.toNamed(AppRoutes.allDepartments)
                               },
-                              child:  Text(
+                              child: Text(
                                 "الكل",
                                 style: TextStyle(
                                   fontSize: AppFontSize.fontSize16,
@@ -152,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
 
-                         SizedBox(height: AppSizeHeight.h8),
+                        SizedBox(height: AppSizeHeight.h8),
 
                         SizedBox(
                           height: AppSizeHeight.h40,

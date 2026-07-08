@@ -16,7 +16,7 @@ class ProfileController extends GetxController {
   }
 
   void goToPersonalInformation() {
-    Get.toNamed(AppRoutes.PersonalInformationScreen);
+    Get.toNamed(AppRoutes.personalInformationScreen);
   }
 
   void logout() {
