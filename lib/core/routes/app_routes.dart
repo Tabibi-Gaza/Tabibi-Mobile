@@ -9,4 +9,5 @@ class AppRoutes {
   static const recordsScreen = '/recordsScreen';
   static const appointmentsScreen = '/appointmentsScreen';
   static const profileScreen = '/profileScreen';
+  static const PersonalInformationScreen = '/PersonalInformationScreen';
 }

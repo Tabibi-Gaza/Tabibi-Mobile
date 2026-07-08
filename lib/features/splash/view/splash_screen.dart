@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CustomeLogoSplash(),
-            const SizedBox(height: AppSizeHeight.h40),
+             SizedBox(height: AppSizeHeight.h40),
             const CircularProgressIndicator(color: AppColors.cWhite),
           ],
         ),

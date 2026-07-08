@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
+import 'package:tabibi_app/core/constants/app_padding.dart';
+import 'package:tabibi_app/core/constants/app_radius.dart';
 
 class CustomeTextFormField extends StatelessWidget {
-  final String hintText;
-  final IconData prefixIcon;
-  final TextEditingController controller;
-  final TextInputType keyboardType;
-  final bool obscureText;
-  final String? Function(String?)? validator;
-  final Widget? sufficIcon;
-
   const CustomeTextFormField({
     super.key,
     required this.hintText,
@@ -19,7 +13,18 @@ class CustomeTextFormField extends StatelessWidget {
     required this.obscureText,
     this.sufficIcon,
     this.validator,
+    this.enabled,
+    this.onTap,
   });
+  final String hintText;
+  final IconData prefixIcon;
+  final TextEditingController controller;
+  final TextInputType keyboardType;
+  final bool obscureText;
+  final String? Function(String?)? validator;
+  final Widget? sufficIcon;
+  final bool? enabled;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,26 +33,29 @@ class CustomeTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: obscureText,
       validator: validator,
+      enabled: enabled ?? true,
+      onTap: onTap,
+
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.cGrey, width: 1),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(AppRadius.r10),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.cPrimary, width: 2),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(AppRadius.r10),
         ),
         border: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.cGrey, width: 2),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(AppRadius.r10),
         ),
         hintText: hintText,
         hintStyle: const TextStyle(color: AppColors.cGrey, fontSize: 15),
         prefixIcon: Icon(prefixIcon, color: AppColors.cGrey),
         suffixIcon: sufficIcon,
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 16,
+          horizontal: AppPadding.p16,
+          vertical: AppPadding.p16,
         ),
       ),
     );

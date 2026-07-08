@@ -25,19 +25,21 @@ class CustomePageView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         SvgPicture.asset(pathImage, width: AppSizeWidth.w400),
-        const SizedBox(height: AppSizeHeight.h20),
+        SizedBox(height: AppSizeHeight.h20),
         SizedBox(
           height: AppSizeHeight.h250,
+          width: AppSizeWidth.w350,
+
           child: Stack(
             children: <Widget>[
               Container(
-                width: AppSizeWidth.w350,
-                height: AppSizeHeight.h220,
-                padding: const EdgeInsets.only(
+                width: double.infinity,
+                height: AppSizeHeight.h230,
+                padding: EdgeInsets.only(
                   left: AppPadding.p30,
                   right: AppPadding.p30,
                   top: AppPadding.p20,
-                  bottom: AppPadding.p40,
+                  bottom: AppPadding.p30,
                 ),
 
                 decoration: BoxDecoration(
@@ -55,6 +57,8 @@ class CustomePageView extends StatelessWidget {
                   ),
                 ),
                 child: Column(
+                  
+
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -63,21 +67,19 @@ class CustomePageView extends StatelessWidget {
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                         color: AppColors.cPrimary,
-                        fontSize: AppFontSize.fontSize25,
+                        fontSize: AppFontSize.fontSize23,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Cairo',
                       ),
                     ),
-                    const SizedBox(height: AppSizeHeight.h7),
+                    SizedBox(height: AppSizeHeight.h7),
                     Text(
                       subTitle,
                       textAlign: TextAlign.center,
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                         color: AppColors.cGrey,
-                        fontSize: AppFontSize.fontSize19,
+                        fontSize: AppFontSize.fontSize17,
                         fontWeight: FontWeight.w400,
-                        fontFamily: 'Cairo',
                       ),
                     ),
                   ],

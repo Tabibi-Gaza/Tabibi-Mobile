@@ -32,7 +32,7 @@ class CusotomBodyForgotPassword extends StatelessWidget {
             color: AppColors.cBlack,
           ),
         ),
-        const SizedBox(height: AppSizeHeight.h10),
+         SizedBox(height: AppSizeHeight.h10),
         Text(
           AppString.forgotPasswordSubTitle,
           textAlign: TextAlign.center,
@@ -41,7 +41,7 @@ class CusotomBodyForgotPassword extends StatelessWidget {
             color: AppColors.cGrey,
           ),
         ),
-        const SizedBox(height: AppSizeHeight.h20),
+         SizedBox(height: AppSizeHeight.h20),
         CustomeTextFormField(
           hintText: AppString.authEmail,
           prefixIcon: Icons.email_outlined,
@@ -50,12 +50,12 @@ class CusotomBodyForgotPassword extends StatelessWidget {
           obscureText: false,
           validator: validatorEmail,
         ),
-        const SizedBox(height: AppSizeHeight.h20),
+         SizedBox(height: AppSizeHeight.h20),
         CustomeButtonAuth(
           text: AppString.forgotPasswordButton,
           onPressed: onPressedSendEmail,
         ),
-        const SizedBox(height: AppSizeHeight.h20),
+         SizedBox(height: AppSizeHeight.h20),
         TextButton(
           onPressed: onPressedBackToLogin,
           child: Text(

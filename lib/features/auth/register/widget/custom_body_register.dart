@@ -65,7 +65,7 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: false,
           validator: validatorFullName,
         ),
-        const SizedBox(height: AppSizeHeight.h8),
+         SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authEmail,
           prefixIcon: Icons.email,
@@ -74,7 +74,7 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: false,
           validator: validatorEmail,
         ),
-        const SizedBox(height: AppSizeHeight.h8),
+         SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authPhoneNumber,
           prefixIcon: Icons.call,
@@ -83,12 +83,12 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: false,
           validator: validatorPhone,
         ),
-        const SizedBox(height: AppSizeHeight.h8),
+         SizedBox(height: AppSizeHeight.h8),
         DropdownButtonFormField<String>(
           isExpanded: false,
           validator: validatorGender,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(
+            contentPadding:  EdgeInsets.symmetric(
               horizontal: AppPadding.p16,
               vertical: AppPadding.p16,
             ),
@@ -125,7 +125,7 @@ class CustomBodyRegister extends StatelessWidget {
           ],
           onChanged: onChangedGender,
         ),
-        const SizedBox(height: AppSizeHeight.h8),
+         SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authAddress,
           prefixIcon: Icons.location_on,
@@ -134,7 +134,7 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: false,
           validator: validatorAddress,
         ),
-        const SizedBox(height: AppSizeHeight.h8),
+         SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authPassword,
           prefixIcon: Icons.lock,
@@ -144,7 +144,7 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: isObscureTextPassword,
           validator: validatorPassword,
         ),
-        const SizedBox(height: AppSizeHeight.h8),
+         SizedBox(height: AppSizeHeight.h8),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -169,12 +169,12 @@ class CustomBodyRegister extends StatelessWidget {
             style: TextStyle(color: Colors.red, fontSize: 12),
           ),
 
-        const SizedBox(height: AppSizeHeight.h10),
+         SizedBox(height: AppSizeHeight.h10),
         CustomeButtonAuth(
           text: AppString.registerButton,
           onPressed: onPressedRegisterButton,
         ),
-        const SizedBox(height: AppSizeHeight.h10),
+         SizedBox(height: AppSizeHeight.h10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -11,25 +11,26 @@ class CustomeHomeReminderBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(AppPadding.p16),
+      padding:  EdgeInsets.all(AppPadding.p16),
       decoration: BoxDecoration(
         color: const Color(0xFFFDEBEB),
         borderRadius: BorderRadius.circular(AppRadius.r20),
         border: Border.all(color: const Color(0xFFF3C2C2)),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Icon(
             Icons.notifications_active_rounded,
             color: Color(0xFFBA1A1A),
-            size: 22,
+            size: 20,
           ),
-          const SizedBox(width: AppSizeWidth.w10),
+           SizedBox(width: AppSizeWidth.w10),
           Expanded(
             child: Text(
               text,
               style: TextStyle(
-                fontSize: AppFontSize.fontSize15,
+                fontSize: AppFontSize.fontSize13,
                 fontWeight: FontWeight.w600,
                 color: Color(0xFF8C1D1D),
               ),

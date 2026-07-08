@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:tabibi_app/core/routes/app_routes.dart';
+import 'package:tabibi_app/features/PersonalInformation/view/personal_information_screen.dart';
 import 'package:tabibi_app/features/auth/forgot%20password/bindings/forgot_password_binding.dart';
 import 'package:tabibi_app/features/auth/login/bindings/login_bindings.dart';
 import 'package:tabibi_app/features/auth/login/view/login_screen.dart';
@@ -41,5 +42,9 @@ class AppPages {
       curve: Curves.bounceIn,
     ),
     GetPage(name: AppRoutes.mainHomePage, page: () => MainHomePage()),
+    GetPage(
+      name: AppRoutes.PersonalInformationScreen,
+      page: () => PersonalInformationScreen(),
+    ),
   ];
 }

@@ -22,7 +22,7 @@ class CustomHederRegister extends StatelessWidget {
             width: AppSizeWidth.w150,
             colorFilter: ColorFilter.mode(AppColors.cWhite, BlendMode.srcIn),
           ),
-          const SizedBox(height: AppSizeHeight.h10),
+           SizedBox(height: AppSizeHeight.h10),
           Text(
             AppString.registerTitle,
             style: TextStyle(

@@ -25,7 +25,6 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GetBuilder<HomeController>(
                 init: homeController,
@@ -40,12 +39,15 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
               ),
+              SizedBox(height: AppSizeHeight.h20),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: AppFontSize.fontSize30,
-                      horizontal: AppPadding.p30,
+                    padding:  EdgeInsets.only(
+                      right: AppPadding.p30,
+                      left: AppPadding.p30,
+                      bottom: AppPadding.p40,
+                      top: AppPadding.p10
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,8 +55,8 @@ class HomeScreen extends StatelessWidget {
                         CustomeHomeReminderBanner(
                           text: "تذكير: موعدك غداً الساعة 10:00 ص مع د. أحمد",
                         ),
-                        const SizedBox(height: AppSizeHeight.h20),
-                        const Text(
+                         SizedBox(height: AppSizeHeight.h20),
+                         Text(
                           AppString.homeAppointment,
                           style: TextStyle(
                             fontSize: AppFontSize.fontSize20,
@@ -62,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                             color: AppColors.cBlack,
                           ),
                         ),
-                        const SizedBox(height: AppSizeHeight.h10),
+                         SizedBox(height: AppSizeHeight.h10),
                         CustomeHomeNextAppointmentCard(
                           nameDoctor: "د. أحمد محمد",
                           imageDoctor: AppAssets.aDoctor,
@@ -72,8 +74,8 @@ class HomeScreen extends StatelessWidget {
                           state: "مؤكد",
                           onPressed: () {},
                         ),
-                        const SizedBox(height: AppSizeHeight.h20),
-                        const Text(
+                         SizedBox(height: AppSizeHeight.h20),
+                         Text(
                           AppString.homeQuickActions,
                           style: TextStyle(
                             fontSize: AppFontSize.fontSize20,
@@ -81,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                             color: AppColors.cBlack,
                           ),
                         ),
-                        const SizedBox(height: AppSizeHeight.h10),
+                         SizedBox(height: AppSizeHeight.h10),
                         GridView.count(
                           shrinkWrap: true,
                           padding: EdgeInsets.zero,
@@ -122,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: AppSizeHeight.h20),
+                         SizedBox(height: AppSizeHeight.h20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -138,7 +140,7 @@ class HomeScreen extends StatelessWidget {
                               onPressed: () {
                                 // TODO: Get.toNamed(AppRoutes.allDepartments)
                               },
-                              child: const Text(
+                              child:  Text(
                                 "الكل",
                                 style: TextStyle(
                                   fontSize: AppFontSize.fontSize16,
@@ -150,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
 
-                        const SizedBox(height: AppSizeHeight.h8),
+                         SizedBox(height: AppSizeHeight.h8),
 
                         SizedBox(
                           height: AppSizeHeight.h40,

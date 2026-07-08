@@ -1,6 +1,6 @@
 class AppString {
   //! onbording screen strings
-  static const String title1 = "ابحــث عــن الـطبيب المنـاسب";
+  static const String title1 = "ابحـث عـن الطبيب المناسب";
   static const String subTitle1 =
       "استعرض الأطباء حسب التخصص، واطلع على معلوماتهم، "
       "واختر الطبيب المناسب لحجز موعدك بكل سهولة.";
@@ -51,4 +51,11 @@ class AppString {
   static const String homeAppointment = "الموعد القادم";
   static const String homeQuickActions = "إجراءات سريعة";
   static const String homeDepartments = "الأقسام الطبية";
+
+  //? App Appointments
+  static const String appointmentsTitle = "مواعيدي";
+  static const String appointmentsUpcoming = "القادمة";
+  static const String appointmentsPast = "السابقة";
+  static const String appointmentsDescription = "إدارة مواعيدك الطبية";
+
 }

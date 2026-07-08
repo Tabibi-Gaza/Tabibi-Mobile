@@ -31,7 +31,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(AppPadding.p16),
+      padding:  EdgeInsets.all(AppPadding.p16),
       decoration: BoxDecoration(
         color: AppColors.cWhite,
         borderRadius: BorderRadius.circular(AppRadius.r20),
@@ -59,7 +59,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
                   backgroundImage: AssetImage(imageDoctor),
                 ),
               ),
-              const SizedBox(width: AppPadding.p16),
+               SizedBox(width: AppPadding.p16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +76,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(
+                          padding:  EdgeInsets.symmetric(
                             horizontal: AppPadding.p10,
                             vertical: AppPadding.p4,
                           ),
@@ -95,7 +95,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: AppSizeHeight.h4),
+                     SizedBox(height: AppSizeHeight.h4),
                     Text(
                       specialty,
                       style: TextStyle(
@@ -109,7 +109,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
             ],
           ),
 
-          const Divider(height: AppSizeHeight.h20),
+           Divider(height: AppSizeHeight.h20),
 
           Row(
             children: [
@@ -118,7 +118,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
                 size: 18,
                 color: AppColors.cGrey,
               ),
-              const SizedBox(width: AppSizeWidth.w8),
+               SizedBox(width: AppSizeWidth.w8),
               Text(
                 date,
                 style: TextStyle(
@@ -128,7 +128,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: AppSizeHeight.h8),
+           SizedBox(height: AppSizeHeight.h8),
           Row(
             children: [
               const Icon(
@@ -136,7 +136,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
                 size: 18,
                 color: AppColors.cGrey,
               ),
-              const SizedBox(width: AppSizeWidth.w8),
+               SizedBox(width: AppSizeWidth.w8),
               Text(
                 time,
                 style: TextStyle(
@@ -146,7 +146,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: AppSizeHeight.h20),
+           SizedBox(height: AppSizeHeight.h20),
           SizedBox(
             width: double.infinity,
             child: CustomeButtonAuth(
