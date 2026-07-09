@@ -1,11 +1,11 @@
-import 'package:tabibi_app/features/home/models/home_dept_clip_model.dart';
+import 'package:tabibi_app/core/models/specialty_model.dart';
 
 class HomeDeptClipList {
-  static List<HomeDeptClipModel> homeDeptClipList = [
-    HomeDeptClipModel(name: "باطنية", selected: true),
-    HomeDeptClipModel(name: "أطفال", selected: false),
-    HomeDeptClipModel(name: "جلدية", selected: false),
-    HomeDeptClipModel(name: "أسنان", selected: false),
-    HomeDeptClipModel(name: "عظام", selected: false),
+  static List<SpecialtyModel> homeDeptClipList = [
+    SpecialtyModel(name: "باطنية", selected: true),
+    SpecialtyModel(name: "أطفال", selected: false),
+    SpecialtyModel(name: "جلدية", selected: false),
+    SpecialtyModel(name: "أسنان", selected: false),
+    SpecialtyModel(name: "عظام", selected: false),
   ];
 }

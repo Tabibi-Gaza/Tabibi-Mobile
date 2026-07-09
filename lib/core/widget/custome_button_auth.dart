@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
+import 'package:tabibi_app/core/constants/app_radius.dart';
 
 class CustomeButtonAuth extends StatelessWidget {
   final String text;
@@ -19,8 +20,8 @@ class CustomeButtonAuth extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: Size(double.infinity, 50),
-        backgroundColor: color ?? AppColors.cPrimary,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        backgroundColor: onPressed==null ? AppColors.cPrimary.withValues(alpha: 0.4) : AppColors.cPrimary,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.r10)),
       ),
       child: Text(
         text,

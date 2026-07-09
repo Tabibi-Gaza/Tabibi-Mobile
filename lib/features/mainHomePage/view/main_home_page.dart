@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
-import 'package:tabibi_app/features/main%20home%20page/navigation/main_nav_config.dart';
+import 'package:tabibi_app/features/mainHomePage/navigation/main_nav_config.dart';
 
 class MainHomePage extends StatelessWidget {
   MainHomePage({super.key});

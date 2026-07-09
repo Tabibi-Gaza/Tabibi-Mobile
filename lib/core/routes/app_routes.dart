@@ -10,4 +10,6 @@ class AppRoutes {
   static const appointmentsScreen = '/appointmentsScreen';
   static const profileScreen = '/profileScreen';
   static const personalInformationScreen = '/personalInformationScreen';
+  static const searchScreen = '/searchScreen';
+  static const selectSpecialtyScreen = '/selectSpecialtyScreen';
 }

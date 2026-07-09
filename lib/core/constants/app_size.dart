@@ -17,6 +17,7 @@ class AppSizeHeight {
   static const double h1 = 1;
   static const double h2 = 2;
   static const double h4 = 4;
+  static const double h5 = 5;
   static const double h7 = 7;
   static const double h8 = 8;
   static const double h10 = 10;
@@ -31,4 +32,5 @@ class AppSizeHeight {
   static const double h250 = 250;
   static const double h260 = 260;
   static const double h350 = 350;
+
 }

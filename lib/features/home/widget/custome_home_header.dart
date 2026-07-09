@@ -26,12 +26,12 @@ class CustomeHomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding:  EdgeInsets.only(
-          top: AppPadding.p20,
-          left: AppPadding.p30,
-          right: AppPadding.p30,
-          bottom: AppPadding.p20,
-        ),
+      padding: EdgeInsets.only(
+        top: AppPadding.p20,
+        left: AppPadding.p30,
+        right: AppPadding.p30,
+        bottom: AppPadding.p20,
+      ),
       decoration: BoxDecoration(
         color: AppColors.cSecondary,
         borderRadius: BorderRadius.only(
@@ -44,10 +44,9 @@ class CustomeHomeHeader extends StatelessWidget {
             blurRadius: 8,
             spreadRadius: 1,
             blurStyle: BlurStyle.normal,
-            offset: Offset(0, 1)
-
-          )
-        ]
+            offset: Offset(0, 1),
+          ),
+        ],
       ),
       child: SafeArea(
         child: Column(
@@ -67,7 +66,7 @@ class CustomeHomeHeader extends StatelessWidget {
                         backgroundImage: AssetImage(personPathImage),
                       ),
                     ),
-                     SizedBox(width: AppSizeWidth.w10),
+                    SizedBox(width: AppSizeWidth.w10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -84,7 +83,7 @@ class CustomeHomeHeader extends StatelessWidget {
                           style: TextStyle(
                             fontSize: AppFontSize.fontSize15,
                             fontWeight: FontWeight.bold,
-      
+
                             color: AppColors.cWhite,
                           ),
                         ),
@@ -95,8 +94,8 @@ class CustomeHomeHeader extends StatelessWidget {
                 Icon(iconNotification, color: Colors.white, size: 30),
               ],
             ),
-             SizedBox(height: AppSizeHeight.h40),
-      
+            SizedBox(height: AppSizeHeight.h40),
+
             //search bar
             Container(
               height: AppSizeHeight.h50,
@@ -110,7 +109,7 @@ class CustomeHomeHeader extends StatelessWidget {
                 onTap: onTap,
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  hintText: "ابحث عن طبيب",
+                  hintText: " ابحث عن طبيب أو تخصص",
                   hintStyle: TextStyle(
                     fontSize: AppFontSize.fontSize15,
                     fontWeight: FontWeight.bold,

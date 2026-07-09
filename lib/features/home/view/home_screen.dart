@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tabibi_app/core/Temporary%20lists/home_dept_clip_list.dart';
 import 'package:tabibi_app/core/constants/app_assets.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
@@ -163,12 +162,9 @@ class HomeScreen extends StatelessWidget {
                               return GetBuilder<HomeController>(
                                 builder: (controller) {
                                   return CustomeHomeDeptChip(
-                                    label: HomeDeptClipList
-                                        .homeDeptClipList[index]
-                                        .name,
-                                    selected: HomeDeptClipList
-                                        .homeDeptClipList[index]
-                                        .selected,
+                                    label: controller.specialties[index].name,
+                                    selected:
+                                        controller.specialties[index].selected!,
                                     onSelected: (bool value) {
                                       homeController.changeSelected(index);
                                     },
