@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tabibi_app/core/Temporary%20lists/patients_list.dart';
+import 'package:tabibi_app/core/constants/app_assets.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';
 import 'package:tabibi_app/core/constants/app_radius.dart';
@@ -13,7 +15,7 @@ import 'package:tabibi_app/features/profile/widget/custome_profile_switch_item.d
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});
   final ProfileController controller = Get.put(ProfileController());
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +27,9 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               ProfileHeader(
-                image: controller.user.image!,
-                name: controller.user.name!,
-                email: controller.user.email!,
+                image: PatientsList.patients[0].image ??AppAssets.aPerson,
+                name: PatientsList.patients[0].name!,
+                email: PatientsList.patients[0].email!,
               ),
               const SizedBox(height: AppSizeHeight.h25),
               Card(

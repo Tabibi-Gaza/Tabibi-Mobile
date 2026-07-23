@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:tabibi_app/core/constants/app_assets.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';
 import 'package:tabibi_app/core/constants/app_radius.dart';
 import 'package:tabibi_app/core/constants/app_size.dart';
+import 'package:tabibi_app/core/models/appointment_status.dart';
+import 'package:tabibi_app/core/widget/custom_state_request.dart';
 import 'package:tabibi_app/core/widget/custome_button_auth.dart';
 
 class CustomeHomeNextAppointmentCard extends StatelessWidget {
@@ -24,7 +25,7 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
   final String date;
   final String time;
   final String specialty;
-  final String state;
+  final AppointmentStatus state;
   final VoidCallback onPressed;
 
   @override
@@ -75,24 +76,9 @@ class CustomeHomeNextAppointmentCard extends StatelessWidget {
                             color: AppColors.cBlack,
                           ),
                         ),
-                        Container(
-                          padding:  EdgeInsets.symmetric(
-                            horizontal: AppPadding.p10,
-                            vertical: AppPadding.p4,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.cTertiary.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Text(
-                            state,
-                            style: TextStyle(
-                              fontSize: AppFontSize.fontSize13,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.cTertiary,
-                            ),
-                          ),
-                        ),
+                       CustomeStateRequest(status: state,),
+
+
                       ],
                     ),
                      SizedBox(height: AppSizeHeight.h4),

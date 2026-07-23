@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_size.dart';
@@ -55,14 +56,14 @@ class CustomBodyLogin extends StatelessWidget {
             fontSize: AppFontSize.fontSize30,
             fontWeight: FontWeight.bold,
           ),
-        ),
-         SizedBox(height: AppSizeHeight.h4),
+        ).animate().fadeIn().slideX(begin: -0.2),
+        SizedBox(height: AppSizeHeight.h4),
         Text(
           loginSubTitleText,
           textAlign: TextAlign.center,
           style: TextStyle(color: AppColors.cGrey, fontSize: 16),
-        ),
-         SizedBox(height: AppSizeHeight.h20),
+        ).animate().fadeIn(delay: 200.ms),
+        SizedBox(height: AppSizeHeight.h20),
         CustomeTextFormField(
           validator: validatorEmail,
           hintText: loginEmailText,
@@ -70,8 +71,8 @@ class CustomBodyLogin extends StatelessWidget {
           controller: emailController,
           keyboardType: TextInputType.emailAddress,
           obscureText: false,
-        ),
-         SizedBox(height: AppSizeHeight.h20),
+        ).animate().fadeIn(delay: 300.ms).slideX(begin: 0.2),
+        SizedBox(height: AppSizeHeight.h20),
         CustomeTextFormField(
           validator: validatorPassword,
           hintText: loginPasswordText,
@@ -80,8 +81,8 @@ class CustomBodyLogin extends StatelessWidget {
           keyboardType: TextInputType.text,
           sufficIcon: sufficIcon,
           obscureText: obscureText,
-        ),
-         SizedBox(height: AppSizeHeight.h8),
+        ).animate().fadeIn(delay: 400.ms).slideX(begin: 0.2),
+        SizedBox(height: AppSizeHeight.h8),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -94,9 +95,12 @@ class CustomBodyLogin extends StatelessWidget {
             ),
           ],
         ),
-         SizedBox(height: AppSizeHeight.h20),
-        CustomeButtonAuth(text: loginButtonText, onPressed: onPressedLogin),
-         SizedBox(height: AppSizeHeight.h20),
+        SizedBox(height: AppSizeHeight.h20),
+        CustomeButtonAuth(
+          text: loginButtonText,
+          onPressed: onPressedLogin,
+        ).animate().fadeIn(delay: 600.ms).scale(begin: Offset(0.8, 0.8)),
+        SizedBox(height: AppSizeHeight.h20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

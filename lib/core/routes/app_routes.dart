@@ -12,4 +12,6 @@ class AppRoutes {
   static const personalInformationScreen = '/personalInformationScreen';
   static const searchScreen = '/searchScreen';
   static const selectSpecialtyScreen = '/selectSpecialtyScreen';
+  static const appointmentDetailsScreen = '/appointmentDetailsScreen';
+  static const allMedicalDepartmentsScreen = '/allMedicalDepartmentsScreen';
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SpecialtyModel {
-  final String name;
+   String name;
+   List<dynamic>? doctors = <dynamic>[];
   final bool? selected;
   final IconData? icon;
 

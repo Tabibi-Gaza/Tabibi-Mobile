@@ -22,7 +22,7 @@ class CustomeAppBar extends StatelessWidget {
       animate: true,
       decorator: DotsDecorator(
         color: AppColors.cPrimary.withValues(alpha: 0.3),
-        activeColor: AppColors.cPrimary,
+        activeColor: AppColors.cSecondary,
         size: const Size.square(12.0),
         activeSize: const Size(40.0, 10.0),
         activeShape: RoundedRectangleBorder(

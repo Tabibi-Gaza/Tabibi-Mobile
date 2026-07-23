@@ -11,16 +11,16 @@ class CustomeHomeHeader extends StatelessWidget {
     required this.personPathImage,
     required this.personName,
     required this.iconNotification,
-    required this.onChanged,
-    required this.onTap,
-    required this.onPressed,
+     this.onChanged,
+     this.onTap,
+     this.onPressed,
   });
   final String personPathImage;
   final String personName;
   final IconData iconNotification;
-  final ValueChanged<String> onChanged;
-  final GestureTapCallback onTap;
-  final VoidCallback onPressed;
+  final ValueChanged<String>? onChanged;
+  final GestureTapCallback? onTap;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,14 @@ class CustomeHomeHeader extends StatelessWidget {
         bottom: AppPadding.p20,
       ),
       decoration: BoxDecoration(
-        color: AppColors.cSecondary,
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: AlignmentGeometry.bottomRight,
+          colors:[
+                        AppColors.cPrimary,
+            AppColors.cSecondary,
+
+          ] ),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(AppRadius.r40),
           bottomRight: Radius.circular(AppRadius.r40),
@@ -63,7 +70,7 @@ class CustomeHomeHeader extends StatelessWidget {
                       backgroundColor: Colors.white,
                       child: CircleAvatar(
                         radius: AppRadius.r26,
-                        backgroundImage: AssetImage(personPathImage),
+                        backgroundImage: NetworkImage(personPathImage),
                       ),
                     ),
                     SizedBox(width: AppSizeWidth.w10),
@@ -107,6 +114,7 @@ class CustomeHomeHeader extends StatelessWidget {
               child: TextField(
                 onChanged: onChanged,
                 onTap: onTap,
+                  readOnly: true,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: " ابحث عن طبيب أو تخصص",

@@ -38,8 +38,6 @@ final AppointmentModel appointment;
         ],
       ),
 
-      // padding: const EdgeInsets.all(AppPadding.p16),
-
       child: Column(
 
         children: [

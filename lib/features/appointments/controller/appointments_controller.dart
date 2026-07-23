@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:tabibi_app/features/appointments/model/appointment_model.dart';
-import 'package:tabibi_app/features/appointments/model/appointment_status.dart';
+import 'package:tabibi_app/core/models/appointment_status.dart';
 
 class AppointmentsController extends GetxController {
   int selectedTab = 0; 

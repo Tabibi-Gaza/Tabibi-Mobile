@@ -5,7 +5,7 @@ import 'package:tabibi_app/core/constants/app_radius.dart';
 import 'package:tabibi_app/core/constants/app_size.dart';
 
 class CostomeHomeQuickAction extends StatelessWidget {
-  final IconData icon;
+  final String pathIcon;
   final String label;
   final Color bgColor;
   final Color iconColor;
@@ -13,7 +13,7 @@ class CostomeHomeQuickAction extends StatelessWidget {
 
   const CostomeHomeQuickAction({
     super.key,
-    required this.icon,
+    required this.pathIcon,
     required this.label,
     required this.bgColor,
     required this.iconColor,
@@ -34,15 +34,8 @@ class CostomeHomeQuickAction extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: AppSizeWidth.w30,
-              height: AppSizeWidth.w30,
-              decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Icon(icon, color: iconColor, size: 26),
-            ),
+            Image.asset(pathIcon, height: 35,),
+            
              SizedBox(height: AppSizeHeight.h8),
             Text(
               label,

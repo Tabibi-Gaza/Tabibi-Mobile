@@ -11,7 +11,8 @@ class SplashScreenController extends GetxController {
 
   void onTime() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.offAllNamed(AppRoutes.onBording);
+        Get.offAllNamed(AppRoutes.onBording);
+      
     });
   }
 }

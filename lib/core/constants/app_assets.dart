@@ -9,4 +9,9 @@ class AppAssets {
   //? App Image
   static const String aPerson = 'assets/images/person.jpg';
   static const String aDoctor = 'assets/images/doctor.jpg';
+  //? App Icon
+  static const String aIconAppointment = 'assets/images/icon/appointment.png';
+  static const String aIconConsultation = 'assets/images/icon/consultation.png';
+  static const String aIconPayment = 'assets/images/icon/payment.png';
+  static const String aIconPrescription = 'assets/images/icon/prescription.png';
 }

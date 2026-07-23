@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabibi_app/core/constants/app_assets.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';

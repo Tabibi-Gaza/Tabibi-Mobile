@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';
@@ -17,83 +18,112 @@ class RegisterScrren extends GetView<RegisterController> {
       backgroundColor: AppColors.cSecondary,
       body: Column(
         children: [
-          Expanded(flex: 2, child: CustomHederRegister()),
+          Expanded(
+            flex: 2,
+            child: CustomHederRegister()
+                .animate()
+                .fadeIn(duration: 700.ms)
+                .slideY(begin: -0.4, curve: Curves.easeOut),
+          ),
           Expanded(
             flex: 5,
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.only(
-                top: AppPadding.p30,
-                right: AppPadding.p20,
-                left: AppPadding.p20,
-                bottom: AppPadding.p20,
-              ),
-              decoration: BoxDecoration(
-                color: AppColors.cWhite,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(AppRadius.r40),
-                  topRight: Radius.circular(AppRadius.r40),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, -10),
-                    color: AppColors.cWhite.withValues(alpha: .2),
-                    spreadRadius: 10,
-                    blurStyle: BlurStyle.solid,
-                  ),
-                ],
-              ),
+            child:
+                Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(
+                        top: AppPadding.p30,
+                        right: AppPadding.p20,
+                        left: AppPadding.p20,
+                        bottom: AppPadding.p20,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.cWhite,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(AppRadius.r40),
+                          topRight: Radius.circular(AppRadius.r40),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, -10),
+                            color: AppColors.cWhite.withValues(alpha: .2),
+                            spreadRadius: 10,
+                            blurStyle: BlurStyle.solid,
+                          ),
+                        ],
+                      ),
 
-              child: SingleChildScrollView(
-                child: Form(
-                  key: controller.formKeyRegister,
-                  child: GetBuilder<RegisterController>(
-                    builder: (registerController) {
-                      return CustomBodyRegister(
-                        fullNameController:
-                            registerController.fullNameController,
-                        emailController: registerController.emailController,
-                        phoneController: registerController.phoneController,
-                        addressController: registerController.addressController,
-                        passwordController:
-                            registerController.passwordController,
+                      child: SingleChildScrollView(
+                        child: Form(
+                          key: controller.formKeyRegister,
+                          child: GetBuilder<RegisterController>(
+                            builder: (registerController) {
+                              return CustomBodyRegister(
+                                fullNameController:
+                                    registerController.fullNameController,
+                                emailController:
+                                    registerController.emailController,
+                                phoneController:
+                                    registerController.phoneController,
+                                addressController:
+                                    registerController.addressController,
+                                passwordController:
+                                    registerController.passwordController,
 
-                        validatorFullName: registerController.validatorFullName,
-                        validatorEmail: registerController.validatorEmail,
-                        validatorPhone: registerController.validatorPhone,
-                        validatorGender: registerController.validatorGender,
-                        validatorAddress: registerController.validatorAddress,
-                        validatorPassword: registerController.validatorPassword,
+                                validatorFullName:
+                                    registerController.validatorFullName,
+                                validatorEmail:
+                                    registerController.validatorEmail,
+                                validatorPhone:
+                                    registerController.validatorPhone,
+                                validatorGender:
+                                    registerController.validatorGender,
+                                validatorAddress:
+                                    registerController.validatorAddress,
+                                validatorPassword:
+                                    registerController.validatorPassword,
 
-                        onChangedGender: registerController.onChangedGender,
-                        onChangedCheckbox: registerController.onChangedCheckbox,
+                                onChangedGender:
+                                    registerController.onChangedGender,
+                                onChangedCheckbox:
+                                    registerController.onChangedCheckbox,
 
-                        isObscureTextPassword:
-                            registerController.isObscureTextPassword,
-                        isChecked: registerController.isChecked,
+                                isObscureTextPassword:
+                                    registerController.isObscureTextPassword,
+                                isChecked: registerController.isChecked,
 
-                        sufficIcon: IconButton(
-                          onPressed:
-                              registerController.onChangedPasswordObscureText,
-                          icon: Icon(
-                            registerController.isObscureTextPassword
-                                ? Icons.visibility
-                                : Icons.visibility_off,
+                                sufficIcon: IconButton(
+                                  onPressed: registerController
+                                      .onChangedPasswordObscureText,
+                                  icon: Icon(
+                                    registerController.isObscureTextPassword
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                  ),
+                                ),
+
+                                onPressedRegisterButton:
+                                    registerController.onPressedRegisterButton,
+                                onPressedTextButton:
+                                    registerController.onPressedTextButton,
+                                ischeckboxError:
+                                    registerController.ischeckboxError,
+                                checkboxError: registerController.checkboxError,
+                                birthDateController: registerController.birthDateController,
+                                validatorBirthDate: registerController.validatorBirthDate,
+                              );
+                            },
                           ),
                         ),
-
-                        onPressedRegisterButton:
-                            registerController.onPressedRegisterButton,
-                        onPressedTextButton:
-                            registerController.onPressedTextButton,
-                        ischeckboxError: registerController.ischeckboxError,
-                        checkboxError: registerController.checkboxError,
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
+                      ),
+                    )
+                    .animate()
+                    .slideY(
+                      begin: 1,
+                      end: 0,
+                      duration: 700.ms,
+                      curve: Curves.easeOut,
+                    )
+                    .fadeIn(),
           ),
         ],
       ),

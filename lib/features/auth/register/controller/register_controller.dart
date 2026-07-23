@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tabibi_app/core/routes/app_routes.dart';
 
 class RegisterController extends GetxController {
   final GlobalKey<FormState> formKeyRegister = GlobalKey<FormState>();
@@ -8,6 +9,8 @@ class RegisterController extends GetxController {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController birthDateController = TextEditingController();
+
   bool isChecked = false;
   bool isObscureTextPassword = true;
   String? gender;
@@ -65,6 +68,13 @@ class RegisterController extends GetxController {
     return null;
   }
 
+  String? validatorBirthDate(String? value) {
+    if (value == null || value.isEmpty) {
+      return "الرجاء إدخال تاريخ الميلاد";
+    }
+    return null;
+  }
+
   void onChangedGender(String? value) {
     gender = value;
     update();
@@ -89,7 +99,7 @@ class RegisterController extends GetxController {
     }
 
     if (formKeyRegister.currentState!.validate()) {
-      Get.snackbar("نجاح", "تم تسجيل الدخول");
+      Get.offNamed(AppRoutes.login);
     }
   }
 
@@ -104,6 +114,7 @@ class RegisterController extends GetxController {
     phoneController.dispose();
     addressController.dispose();
     passwordController.dispose();
+    birthDateController.dispose();
     super.onClose();
   }
 }

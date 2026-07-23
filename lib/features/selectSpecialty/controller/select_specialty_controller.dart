@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/models/specialty_model.dart';
-import 'package:tabibi_app/core/Temporary lists/doctors_list.dart' as doctors_data;
-import 'package:tabibi_app/core/Temporary lists/specialties_list.dart' as specialties_data;
+import 'package:tabibi_app/core/Temporary lists/doctors_list.dart';
+import 'package:tabibi_app/core/Temporary lists/specialties_list.dart' ;
 import 'package:tabibi_app/core/routes/app_routes.dart';
-import 'package:tabibi_app/features/onBording/widget/doctor_model.dart';
+import 'package:tabibi_app/core/models/doctor_model.dart';
 
 class SelectSpecialtyController extends GetxController {
   final PageController pageController = PageController();
@@ -36,8 +36,8 @@ class SelectSpecialtyController extends GetxController {
     '09:00', '09:30', '10:00', '10:30', '11:00', '11:30'
   ];
 
-  List<SpecialtyModel> get specialties => specialties_data.specialties;
-  List<DoctorModel> get doctors => doctors_data.doctors;
+  List<SpecialtyModel> get specialties => Specialties.specialties;
+  List<DoctorModel> get doctors => DoctorsList.doctors;
 
   void changeSelectedSpecialty(int index ) {
     selectedSpecialtyIndex = index;

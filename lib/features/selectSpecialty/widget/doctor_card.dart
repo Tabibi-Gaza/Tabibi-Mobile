@@ -4,7 +4,7 @@ import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';
 import 'package:tabibi_app/core/constants/app_radius.dart';
 import 'package:tabibi_app/core/constants/app_size.dart';
-import 'package:tabibi_app/features/onBording/widget/doctor_model.dart';
+import 'package:tabibi_app/core/models/doctor_model.dart';
 
 import '../../../core/constants/app_assets.dart';
 

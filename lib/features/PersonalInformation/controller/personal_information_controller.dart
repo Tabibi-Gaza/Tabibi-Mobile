@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tabibi_app/core/Temporary%20lists/patients_list.dart';
 
 class PersonalInformationController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController fullNameController = TextEditingController(
-    text: "ساره احمد",
+    text: PatientsList.patients[0].name??'',
   );
   final TextEditingController emailController = TextEditingController(
-    text: "EMAIL@ADDRESS",
+    text: PatientsList.patients[0].email??'',
   );
   final TextEditingController phoneController = TextEditingController(
-    text: "592123123",
+    text: PatientsList.patients[0].phone??'',
   );
   final TextEditingController dateOfBirthController = TextEditingController(
-    text: "1990-01-01",
+    text: PatientsList.patients[0].birthDate?.toIso8601String()??'',
   );
   final TextEditingController addressController = TextEditingController(
-    text: "غزة",
+    text: PatientsList.patients[0].address??'',
   );
   String? gender;
   DateTime? selectedDate;

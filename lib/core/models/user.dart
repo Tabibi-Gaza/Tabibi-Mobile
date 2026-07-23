@@ -1,13 +1,16 @@
-class UserModel {
+import 'package:tabibi_app/core/models/gender.dart';
+
+class User {
   String? id;
   String? name;
   String? email;
   String? phone;
   String? image;
-  String? gender;
+  String? address;
+  Gender? gender;
   String? password;
-  DateTime? dateOfBirth;
-  UserModel({
+  DateTime? birthDate;
+  User({
     this.id,
     this.name,
     this.email,
@@ -15,6 +18,7 @@ class UserModel {
     this.image,
     this.gender,
     this.password,
-    this.dateOfBirth,
+     this.address,
+     this.birthDate,
   });
 }

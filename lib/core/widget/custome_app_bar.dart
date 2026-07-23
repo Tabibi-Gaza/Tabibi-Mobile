@@ -31,14 +31,15 @@ class CustomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
-        actions ??
-            IconButton(
-              onPressed: onPressedActions,
-              icon: const Icon(
-                Icons.notifications_none_rounded,
-                color: AppColors.cPrimary,
-              ),
+        if (actions != null) actions!,
+        if (actions == null)
+          IconButton(
+            onPressed: onPressedActions,
+            icon: const Icon(
+              Icons.notifications_none_rounded,
+              color: AppColors.cPrimary,
             ),
+          ),
       ],
       leading: leading,
     );

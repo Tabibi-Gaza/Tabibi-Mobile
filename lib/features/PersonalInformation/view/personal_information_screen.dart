@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tabibi_app/core/Temporary%20lists/patients_list.dart';
+import 'package:tabibi_app/core/constants/app_assets.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';
@@ -11,9 +13,9 @@ import 'package:tabibi_app/features/PersonalInformation/controller/personal_info
 import 'package:tabibi_app/features/PersonalInformation/widget/custome_personal_information.dart';
 
 class PersonalInformationScreen extends StatelessWidget {
-  const PersonalInformationScreen({super.key});
+   PersonalInformationScreen({super.key});
 
-  PersonalInformationController get controller =>
+   PersonalInformationController get controller =>
       Get.put(PersonalInformationController());
 
   @override
@@ -65,7 +67,7 @@ class PersonalInformationScreen extends StatelessWidget {
                           CircleAvatar(
                             radius: AppRadius.r40,
                             backgroundImage: NetworkImage(
-                              "https://i.pravatar.cc/300",
+                              PatientsList.patients[0].image ??AppAssets.aPerson,
                             ),
                           ),
                           Positioned(

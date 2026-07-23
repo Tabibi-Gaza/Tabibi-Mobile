@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_radius.dart';
+import 'package:tabibi_app/core/widget/backgroundGradient.dart';
 
 class CustomeButtonAuth extends StatelessWidget {
   final String text;
@@ -16,21 +17,25 @@ class CustomeButtonAuth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return MaterialButton(
+      height: 50,
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        minimumSize: Size(double.infinity, 50),
-        backgroundColor: onPressed==null ? AppColors.cPrimary.withValues(alpha: 0.4) : AppColors.cPrimary,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.r10)),
-      ),
-      child: Text(
+      minWidth: double.infinity,
+    animationDuration: Duration(
+      milliseconds: 300,
+    ),
+      
+      child: Backgroundgradient(
+        height:50 ,
+        child:
+       Text(
         text,
         style: TextStyle(
           color: AppColors.cWhite,
           fontSize: AppFontSize.fontSize16,
           fontWeight: FontWeight.bold,
         ),
-      ),
+      ),)
     );
   }
 }

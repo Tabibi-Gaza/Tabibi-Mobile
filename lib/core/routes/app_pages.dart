@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:tabibi_app/core/routes/app_routes.dart';
+import 'package:tabibi_app/features/AppointmentDetails/view/appointment_details_screen.dart';
+import 'package:tabibi_app/features/AllMedicalDepartments/view/all_medical_departments_screen.dart';
 import 'package:tabibi_app/features/PersonalInformation/view/personal_information_screen.dart';
 import 'package:tabibi_app/features/appointments/view/appointments_screen.dart';
 import 'package:tabibi_app/features/auth/forgot%20password/bindings/forgot_password_binding.dart';
@@ -49,7 +51,8 @@ class AppPages {
       name: AppRoutes.personalInformationScreen,
       page: () => PersonalInformationScreen(),
     ),
-    GetPage(name: AppRoutes.searchScreen, page: () => SearchScreen()),
+    GetPage(name: AppRoutes.searchScreen, page: () => SearchScreen(),
+    curve: Curves.bounceInOut),
     GetPage(
       name: AppRoutes.selectSpecialtyScreen,
       page: () => SelectSpecialtyScreen(),
@@ -57,6 +60,12 @@ class AppPages {
     GetPage(
       name: AppRoutes.appointmentsScreen,
       page: () => AppointmentsScreen(),
+    ),
+    GetPage(name: AppRoutes.appointmentDetailsScreen, page: () => AppointmentDetailsScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.allMedicalDepartmentsScreen,
+      page: () => AllMedicalDepartmentsScreen(),
     ),
   ];
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
@@ -24,7 +25,11 @@ class CustomePageView extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        SvgPicture.asset(pathImage, width: AppSizeWidth.w400),
+        SvgPicture.asset(pathImage, width: AppSizeWidth.w400)
+            .animate()
+            .fadeIn(duration: 600.ms)
+            .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
+
         SizedBox(height: AppSizeHeight.h20),
         SizedBox(
           height: AppSizeHeight.h250,
@@ -57,20 +62,21 @@ class CustomePageView extends StatelessWidget {
                   ),
                 ),
                 child: Column(
-                  
-
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      title,
-                      textDirection: TextDirection.rtl,
-                      style: TextStyle(
-                        color: AppColors.cPrimary,
-                        fontSize: AppFontSize.fontSize23,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                          title,
+                          textDirection: TextDirection.rtl,
+                          style: TextStyle(
+                            color: AppColors.cPrimary,
+                            fontSize: AppFontSize.fontSize23,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                        .animate()
+                        .fadeIn(delay: 200.ms)
+                        .slideX(begin: 0.2, end: 0),
                     SizedBox(height: AppSizeHeight.h7),
                     Text(
                       subTitle,
@@ -81,7 +87,7 @@ class CustomePageView extends StatelessWidget {
                         fontSize: AppFontSize.fontSize17,
                         fontWeight: FontWeight.w400,
                       ),
-                    ),
+                    ).animate().fadeIn(delay: 400.ms),
                   ],
                 ),
               ),
@@ -89,14 +95,22 @@ class CustomePageView extends StatelessWidget {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                child: CircleAvatar(
-                  radius: AppRadius.r30,
-                  backgroundColor: AppColors.cPrimary,
+                child: Container(
+                  height: AppSizeHeight.h60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [AppColors.cPrimary, AppColors.cSecondary],
+                    ),
+                  ),
+
                   child: InkWell(
                     onTap: onTap,
                     child: Icon(Icons.arrow_forward, color: AppColors.cWhite),
                   ),
-                ),
+                ).animate().fadeIn().slideX(begin: 0.3),
               ),
             ],
           ),

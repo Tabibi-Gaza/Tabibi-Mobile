@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:tabibi_app/core/constants/app_colors.dart';
 import 'package:tabibi_app/core/constants/app_font_size.dart';
 import 'package:tabibi_app/core/constants/app_padding.dart';
@@ -29,7 +30,7 @@ class CustomBodyRegister extends StatelessWidget {
     required this.onPressedRegisterButton,
     required this.onPressedTextButton,
     this.ischeckboxError,
-    this.checkboxError,
+    this.checkboxError, required this.birthDateController, required this.validatorBirthDate,
   });
 
   final TextEditingController fullNameController;
@@ -52,6 +53,9 @@ class CustomBodyRegister extends StatelessWidget {
   final VoidCallback onPressedTextButton;
   final bool? ischeckboxError;
   final String? checkboxError;
+  final TextEditingController birthDateController;
+  final FormFieldValidator<String> validatorBirthDate;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -64,8 +68,8 @@ class CustomBodyRegister extends StatelessWidget {
           keyboardType: TextInputType.text,
           obscureText: false,
           validator: validatorFullName,
-        ),
-         SizedBox(height: AppSizeHeight.h8),
+        ).animate().fadeIn().slideX(begin: -0.2),
+        SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authEmail,
           prefixIcon: Icons.email,
@@ -73,8 +77,8 @@ class CustomBodyRegister extends StatelessWidget {
           keyboardType: TextInputType.emailAddress,
           obscureText: false,
           validator: validatorEmail,
-        ),
-         SizedBox(height: AppSizeHeight.h8),
+        ).animate().fadeIn(delay: 100.ms).slideX(begin: -0.2),
+        SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authPhoneNumber,
           prefixIcon: Icons.call,
@@ -83,12 +87,12 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: false,
           validator: validatorPhone,
         ),
-         SizedBox(height: AppSizeHeight.h8),
+        SizedBox(height: AppSizeHeight.h8),
         DropdownButtonFormField<String>(
           isExpanded: false,
           validator: validatorGender,
           decoration: InputDecoration(
-            contentPadding:  EdgeInsets.symmetric(
+            contentPadding: EdgeInsets.symmetric(
               horizontal: AppPadding.p16,
               vertical: AppPadding.p16,
             ),
@@ -125,7 +129,7 @@ class CustomBodyRegister extends StatelessWidget {
           ],
           onChanged: onChangedGender,
         ),
-         SizedBox(height: AppSizeHeight.h8),
+        SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authAddress,
           prefixIcon: Icons.location_on,
@@ -134,7 +138,18 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: false,
           validator: validatorAddress,
         ),
-         SizedBox(height: AppSizeHeight.h8),
+
+        SizedBox(height: AppSizeHeight.h8),
+                CustomeTextFormField(
+          hintText: "تاريخ الميلاد",
+          prefixIcon: Icons.date_range,
+          controller: birthDateController,
+          keyboardType: TextInputType.datetime,
+          obscureText: false,
+          validator: validatorBirthDate,
+        ),
+
+        SizedBox(height: AppSizeHeight.h8),
         CustomeTextFormField(
           hintText: AppString.authPassword,
           prefixIcon: Icons.lock,
@@ -144,7 +159,7 @@ class CustomBodyRegister extends StatelessWidget {
           obscureText: isObscureTextPassword,
           validator: validatorPassword,
         ),
-         SizedBox(height: AppSizeHeight.h8),
+        SizedBox(height: AppSizeHeight.h8),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -169,12 +184,12 @@ class CustomBodyRegister extends StatelessWidget {
             style: TextStyle(color: Colors.red, fontSize: 12),
           ),
 
-         SizedBox(height: AppSizeHeight.h10),
+        SizedBox(height: AppSizeHeight.h10),
         CustomeButtonAuth(
           text: AppString.registerButton,
           onPressed: onPressedRegisterButton,
         ),
-         SizedBox(height: AppSizeHeight.h10),
+        SizedBox(height: AppSizeHeight.h10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

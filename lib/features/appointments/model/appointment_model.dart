@@ -1,4 +1,4 @@
-import 'package:tabibi_app/features/appointments/model/appointment_status.dart';
+import 'package:tabibi_app/core/models/appointment_status.dart';
 
 class AppointmentModel {
   final String name;

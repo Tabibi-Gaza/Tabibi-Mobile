@@ -49,7 +49,6 @@ class OnBordingScreen extends GetView<OnBordingController> {
                 color: AppColors.cPrimary,
                 fontSize: AppFontSize.fontSize16,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Cairo',
               ),
             ),
           ),

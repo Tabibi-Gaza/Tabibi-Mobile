@@ -39,7 +39,10 @@ class LoginController extends GetxController {
 
   void onPressedLogin() {
     if (formKey.currentState!.validate()) {
-      Get.offAndToNamed(AppRoutes.mainHomePage);
+
+
+          Get.offAllNamed(AppRoutes.mainHomePage);
+      
     } else {
       Get.snackbar("خطأ", "يرجى تعبئة الحقول");
     }

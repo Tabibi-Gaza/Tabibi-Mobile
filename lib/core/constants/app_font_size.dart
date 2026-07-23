@@ -1,7 +1,9 @@
 
 class AppFontSize {
   static const double fontSize11 = 11;
+  static const double fontSize12 = 12;
   static const double fontSize13 = 13;
+  static const double fontSize14 = 14;
   static const double fontSize15 = 15;
   static const double fontSize16 = 16;
   static const double fontSize17 = 17;

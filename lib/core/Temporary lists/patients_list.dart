@@ -1,85 +1,35 @@
 import 'package:tabibi_app/core/constants/app_assets.dart';
-import 'package:tabibi_app/core/models/user_model.dart';
+import 'package:tabibi_app/core/models/gender.dart';
+import 'package:tabibi_app/core/models/user.dart';
 
-final List<UserModel> patients = [
-  UserModel(
+class PatientsList {
+static List<User> patients = [
+  User(
     id: "1",
     name: "محمد أحمد",
     email: "mohammad@gmail.com",
     phone: "0599123456",
-    image: AppAssets.aPerson,
-    gender: "ذكر",
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu5v0tocLtdcVrsfwZkfPHoDkLThWWgVyduWNkMV_dwg&s',
+    gender: Gender.male,
     password: "123456",
-    dateOfBirth: DateTime(1998, 5, 12),
+    birthDate: DateTime.now(),
+    address: 'القاهرة',
   ),
-  UserModel(
+  User(
     id: "2",
     name: "أحمد خالد",
     email: "ahmed@gmail.com",
     phone: "0599234567",
     image: AppAssets.aPerson,
-    gender: "ذكر",
+    gender: Gender.male,
     password: "123456",
-    dateOfBirth: DateTime(1996, 9, 18),
+    address: 'القاهرة',
+    birthDate: DateTime.now(),
   ),
-  UserModel(
-    id: "3",
-    name: "سارة يوسف",
-    email: "sara@gmail.com",
-    phone: "0599345678",
-    image: AppAssets.aPerson,
-    gender: "أنثى",
-    password: "123456",
-    dateOfBirth: DateTime(2000, 2, 25),
-  ),
-  UserModel(
-    id: "4",
-    name: "ريم حسن",
-    email: "reem@gmail.com",
-    phone: "0599456789",
-    image: AppAssets.aPerson,
-    gender: "أنثى",
-    password: "123456",
-    dateOfBirth: DateTime(1999, 7, 30),
-  ),
-  UserModel(
-    id: "5",
-    name: "يوسف علي",
-    email: "yousef@gmail.com",
-    phone: "0599567890",
-    image: AppAssets.aPerson,
-    gender: "ذكر",
-    password: "123456",
-    dateOfBirth: DateTime(1994, 11, 8),
-  ),
-  UserModel(
-    id: "6",
-    name: "لينا محمد",
-    email: "lina@gmail.com",
-    phone: "0599678901",
-    image: AppAssets.aPerson,
-    gender: "أنثى",
-    password: "123456",
-    dateOfBirth: DateTime(2002, 1, 15),
-  ),
-  UserModel(
-    id: "7",
-    name: "عمر إبراهيم",
-    email: "omar@gmail.com",
-    phone: "0599789012",
-    image: AppAssets.aPerson,
-    gender: "ذكر",
-    password: "123456",
-    dateOfBirth: DateTime(1997, 3, 21),
-  ),
-  UserModel(
-    id: "8",
-    name: "نور أحمد",
-    email: "noor@gmail.com",
-    phone: "0599890123",
-    image: AppAssets.aPerson,
-    gender: "أنثى",
-    password: "123456",
-    dateOfBirth: DateTime(2001, 10, 5),
-  ),
+ 
 ];
+
+
+
+}
+
